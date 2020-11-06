@@ -1,0 +1,374 @@
+html{
+  font-size: 10px;
+}
+
+*{
+  transition: all .3s;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+}
+.wrapper{
+  max-width: 1020px;
+  margin: auto;
+  }
+
+/*Header*/
+.wrapper_header{
+  background: #2D303A;
+  border-bottom: 0.6rem solid #323746; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem; 
+}
+
+.logo{
+  font:normal 2.5rem Lato;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  padding-top: 0.2rem;
+  padding-bottom: 1.2rem;
+  cursor: pointer;
+}
+
+.logo_star{
+  color:#F06C64;
+}
+
+.navigation_pages{
+  display: flex;
+  flex-direction: row;
+  gap: 3.31rem;
+  justify-content: space-evenly;
+  font:normal bold 1.2rem Lato;
+  color: #FFFFFF;
+  letter-spacing: -0.035em;
+  cursor: pointer;
+}
+
+.navigation_pages>*:hover{
+  color:#F06C64;
+}
+
+.navigation_pages li:nth-child(1){
+  list-style: none;
+}
+
+/* Slider*/
+
+.wrapper_slide{
+  background: #F06C64;
+  border-bottom: .6rem solid #EA676B;
+}
+.slide{
+  position: relative;
+  width: 100%;
+}
+
+.image_phone{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.arrow{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.img_ar_left{
+  width: 100%;
+}
+.img_ar_right{
+  width: 100%;
+}
+
+.arrow_left{
+  margin-left: 4%;
+}
+
+.arrow_right{
+  margin-right: 4%;
+}
+
+.arrow_right,
+.arrow_left{
+  cursor: pointer;
+} 
+
+.arrow_right:hover{
+  transform: scale(1.3);
+}
+
+.arrow_left:hover{
+  transform: scale(1.3);
+}
+
+/*Our Service*/
+
+.wrapper_service{
+  background: #F2F2F2;
+  border-bottom: .6rem solid #FFFFFF;
+}
+.service{
+  padding-right: 4rem;
+  padding-left: 4rem;
+}
+.card_content_text{
+  display: flex;
+  flex-direction: column;
+}
+.card_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.service_card{
+  display: grid;
+  grid-template-columns: repeat( auto-fill, 300px);
+  grid-gap: 2rem;
+  padding-top: 2.85rem;
+  padding-bottom: 4.45rem;
+  margin: 0;
+}
+
+.service_title,
+.portfolio_title{
+  font: normal 3rem Lato;
+  font-weight: 900;
+  line-height: 3.6rem;
+  letter-spacing: 0.01em;
+  color: #666D89;
+  padding-top: 5.9rem;
+  margin: 0;
+  text-align: justify;
+}
+.service_description{
+  font: normal 1.8rem Lato;
+  font-weight: 300;
+  line-height: 3rem;
+  color: #767E9E;
+  margin-bottom: 1.8rem;
+  text-align: left;
+  letter-spacing: -0.004rem;
+}
+.card__title{
+  font:normal 1.8rem Lato;
+  font-weight: 900;
+  line-height: 1.8rem;
+  text-align: justify;
+  letter-spacing: 0.021em;
+  color: #666D89;
+  margin: 0;
+}
+.card__discription{
+  font:normal 1.2rem Lato;
+  font-weight: normal;
+  text-align: justify;
+  line-height: 2.2rem;
+  color: #767E9E;
+  width: 22rem;
+  height: 7.7rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  overflow:hidden;
+}
+
+
+
+/* Portfolio */
+
+.wrapper_portfolio{
+  background: #2D303A;
+  border-bottom: .6rem solid #323746;
+}
+.portfolio{
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.portfolio__description{
+  font: normal 1.8rem Lato;
+  font-weight: 300;
+  line-height: 3rem;
+  color: #767E9E;
+  margin-bottom: 1.3rem;
+}
+
+.portfolio_buttons{
+  display: flex;
+  flex-direction: row;
+  padding-left:0 ;
+  margin: 0px; 
+}
+
+.portfolio_buttons>*{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #767E9E;
+  color: #767E9E ;
+  font: normal 1.2rem Lato;
+  font-weight: normal;
+  line-height: 2rem;
+  border-radius: 5px;
+  margin-right: 1.05rem;
+  padding-left: .6rem;
+  padding-right: .6rem;
+}
+
+.portfolio_images{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 22rem);
+  grid-template-rows: 1fr 1fr 1fr; 
+  column-gap: 2rem;
+  row-gap: 2rem;
+  margin-top: 1.8rem;
+  padding-bottom: 6.8rem;
+  overflow:hidden;
+  height: 60.1rem;
+}
+
+.image{
+  width: 100%;
+}
+
+/*Footer*/
+.wrapper_footer{
+  background: #2D303A;
+}
+
+.footer_text{
+  font: normal 1.3rem Lato;
+  font-weight: 900;
+  line-height: 1.8rem;
+  color: #666D89;
+  margin-left: 4rem;
+}
+
+.footer_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 7.6rem;
+}
+
+.footer_social_buttons{
+  margin-right: 4rem;
+}
+
+.social_buttons{
+  padding-left: 0.8rem;
+}
+
+@media screen and (max-width: 1021px){
+  .wrapper{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .portfolio{
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .portfolio_images{
+    grid-template-columns: repeat( auto-fill, 21.6rem);
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    grid-gap: 1.9rem;
+    margin-top: 2.8rem;
+    padding-bottom: 7.3rem;
+    overflow:hidden;
+    height: 79.4rem;
+  }
+
+@media screen and (max-width: 767px){
+   .header_item2{
+    display: none;
+  }
+
+  .header {
+    justify-content: center; 
+  }  
+
+  .portfolio_buttons>*{
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+ 
+  .portfolio_images{
+    grid-template-columns: repeat( auto-fill, 15.1rem);
+    grid-gap: 1.4rem;
+    height: 55.4rem;
+    overflow:hidden;
+  }
+  .footer_text{
+    display: none;
+  }
+  .footer_content{
+    justify-content: center;
+  }
+}
+
+
+/*  375px <= width <= 767px*/
+
+
+@media screen and (max-width: 375px){
+  .wrapper{
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .service_card{
+    grid-gap: 0.5rem;
+  }
+  /* .card_content_text{
+
+  } */
+  .portfolio{
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+  .portfolio_buttons>*{
+    margin-right: 0.85rem;
+    padding-left: .1rem;
+    padding-right: .1rem;
+  }
+  .portfolio_images{
+    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    column-gap: 1.3rem;
+    row-gap: 1.4rem;
+    margin-top: 2.5rem;
+    padding-bottom: 4.2rem;
+    
+    height: 5rem;overflow:hidden;
+  }
+  .portfolio_images>*{
+    height: 55rem;
+    overflow:hidden;
+  }
+  .wrapper{
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .arrow_left{
+    margin-left: 1%;
+  }
+  .arrow_right{
+    margin-right: 1%;
+  }
+} 
