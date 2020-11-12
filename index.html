@@ -8,22 +8,23 @@
   <title>simple-singolo</title>
 </head>
 <body>
-  <header class="wrapper_header">
+  <header id="hid1" class="wrapper_header">
       <div class="wrapper">
-        <div class="header">
-          <div class="header_item1">
+        <div class="header__wrapper">
+          <div class=burger><img src="/image/Burger-menu-icon.png" alt="burger"></div>
+          <div class="header_logo">
             <h1 class="logo">
               SINGOLO<span class="logo_star">*</span>
             </h1>
           </div>
-          <div class="header_item2">
+          <div class="header_navigation">
             <nav class="navigation">
               <ul class="navigation_pages">
-                <li>HOME</li>
-                <li>SERVICES</li>
-                <li>PORTFOLIO</li>
-                <li>ABOUT</li>
-                <li>CONTACT</li>
+                <li><a class="nav_home focus" href="#hid1">HOME</a></li>
+                <li><a class="nav_service" href="#hid2">SERVICES</a></li>
+                <li><a class="nav_portfolio" href="#hid3">PORTFOLIO</a></li>
+                <li><a class="nav_about" href="#hid4">ABOUT</a></li>
+                <li><a class="nav_contact" href="#hid5">CONTACT</a></li>
               </ul>
             </nav>
           </div>
@@ -32,27 +33,32 @@
   </header>
   <div class="wrapper_slide">
       <div class="wrapper">
-        <div class="slide">
-          <div class="phone1">
-            <img class="image_phone" src="image/phone/Slide1b.png" data="image/phone/Slide1.png">
+        <div class="slide__wrapper">
+          <div class="slide__wrapper__phone1">
+            <div class="slider__wrapper">
+              <img rel='0' class="slider__image slider__image-active" src="image/phone/Slide1b.png" alt='image phone'/>
+              <img rel='1' class="slider__image" src="image/phone/Slide2b.png" alt='image phone'/>
+              <img rel='2' class="slider__image" src="image/phone/Slide1b.png" alt='image phone'/>
+              <img rel='3' class="slider__image" src="image/phone/Slide2b.png" alt='image phone'/>
+            </div>
           </div>
           <div class="arrow">
-            <div class="arrow_left" ><img class="img_ar_left" src="image/arrow-left.svg" data="/image/arrow-left.svg"></div>
-            <div class="arrow_right"><img class="img_ar_right" src="image/arrow-right.svg" data="/image/arrow-right.svg"></div>
+            <div class="arrow_left" ><img class="img_ar_left" src="image/arrow-left.svg" alt='<'></div>
+            <div class="arrow_right"><img class="img_ar_right" src="image/arrow-right.svg" alt='>'></div>
           </div>
         </div>
       </div>
   </div>
-    <div class="wrapper_service"> 
+  <div id="hid2" class="wrapper_service"> 
       <div class="wrapper">
-        <div class="service">
+        <div class="service__wrapper">
           <h2 class="service_title">Our Services</h2>
           <p class="service_description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
           
           <div class="service_card">
               
               <div class="card_content">
-                <div class="service_card_icon"><img src="image/icon service/services-item-1.png" data="image/icon service/services-item-1.png"></div>
+                <div class="service_card_icon"><img src="image/icon_service/services-item-1.png" alt='pen'></div>
                 <div class="card_content_text">
                   <h3 class="card__title">Custom Design</h3>
                   <p class="card__discription">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
@@ -61,7 +67,7 @@
 
               
                 <div class="card_content">
-                  <div class="service_card_icon"><img src="image/icon service/services-item-2.png" data="image/icon service/services-item-2.png"></div>
+                  <div class="service_card_icon"><img src="image/icon_service/services-item-2.png" alt='lamp'></div>
                   <div class="card_content_text">
                     <h3 class="card__title">Inovative Ideas</h3>
                     <p class="card__discription">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p> 
@@ -69,7 +75,7 @@
                 </div>
               
                 <div class="card_content">
-                  <div class="service_card_icon"><img src="image/icon service/services-item-3.png" data="image/icon service/services-item-3.png"></div>
+                  <div class="service_card_icon"><img src="image/icon_service/services-item-3.png" alt='heart'></div>
                   <div class="card_content_text">
                     <h3 class="card__title">Love Is The Answer</h3>
                     <p class="card__discription">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
@@ -77,7 +83,7 @@
                 </div>
               
               <div class="card_content">
-                <div class="service_card_icon"><img src="image/icon service/services-item-4.png" data="image/icon service/services-item-4.png"></div>
+                <div class="service_card_icon"><img src="image/icon_service/services-item-4.png" alt='phone'></div>
                 <div class="card_content_text">
                   <h3 class="card__title">Responsive Layout</h3>
                   <p class="card__discription">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
@@ -85,7 +91,7 @@
               </div>
               
               <div class="card_content">
-                <div class="service_card_icon"><img src="image/icon service/services-item-5.png" data="image/icon service/services-item-5.png"></div>
+                <div class="service_card_icon"><img src="image/icon_service/services-item-5.png" alt='cloud'></div>
                 <div class="card_content_text">
                   <h3 class="card__title">24 / 7 Support</h3>
                   <p class="card__discription">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
@@ -93,7 +99,7 @@
               </div>
               
               <div class="card_content">
-                <div class="service_card_icon"><img src="image/icon service/services-item-6.png" data="image/icon service/services-item-6.png"></div>
+                <div class="service_card_icon"><img src="image/icon_service/services-item-6.png" alt='star'></div>
                 <div class="card_content_text">
                   <h3 class="card__title">Feel Like A Star</h3>
                   <p class="card__discription">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>                  
@@ -104,30 +110,30 @@
         </div>
       </div>
     </div>
-    <div class="wrapper_portfolio">
+    <div id="hid3" class="wrapper_portfolio">
       <div class="wrapper">
-        <div class="portfolio">
+        <div class="portfolio__wrapper">
           <h2 class="portfolio_title">Portfolio</h2>
           <p class="portfolio__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-          <ul class=portfolio_buttons>
-            <li>All</li>
-            <li>Web Design</li>
-            <li>Graphic Design</li>
-            <li>Artwork</li>
-          </ul>
+          <div class="portfolio_buttons tags">
+            <span class="tag tag_selected">All</span>
+            <span class="tag second_tag">Web Design</span>
+            <span class="tag three_tag">Graphic Design</span>
+            <span class="tag four_tag">Artwork</span>
+          </div>
           <div class="portfolio_images"> 
-            <div><img class="image" src="/image/portfolio/portfolio-1.png" alt="ship"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-2.png" alt="girl"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-3.png" alt="city"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-4.png" alt="robot"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-5.png" alt="animal"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-6.png" alt="work"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-7.png" alt="nlo"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-8.png" alt="hens"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-9.png" alt="monstr"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-10.png" alt="text"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-11.png" alt="monstr"></div>
-            <div><img class="image" src="/image/portfolio/portfolio-12.png" alt="book"></div>
+            <div class="portfolio_images_item1"><img class="image" src="/image/portfolio/portfolio-1.png" alt="ship"></div>
+            <div class="portfolio_images_item2"><img class="image" src="/image/portfolio/portfolio-2.png" alt="girl"></div>
+            <div class="portfolio_images_item3"><img class="image" src="/image/portfolio/portfolio-3.png" alt="city"></div>
+            <div class="portfolio_images_item4"><img class="image" src="/image/portfolio/portfolio-4.png" alt="robot"></div>
+            <div class="portfolio_images_item5"><img class="image" src="/image/portfolio/portfolio-5.png" alt="animal"></div>
+            <div class="portfolio_images_item6"><img class="image" src="/image/portfolio/portfolio-6.png" alt="work"></div>
+            <div class="portfolio_images_item7"><img class="image" src="/image/portfolio/portfolio-7.png" alt="nlo"></div>
+            <div class="portfolio_images_item8"><img class="image" src="/image/portfolio/portfolio-8.png" alt="hens"></div>
+            <div class="portfolio_images_item9"><img class="image" src="/image/portfolio/portfolio-9.png" alt="monstr"></div>
+            <div class="portfolio_images_item10"><img class="image" src="/image/portfolio/portfolio-10.png" alt="text"></div>
+            <div class="portfolio_images_item11"><img class="image" src="/image/portfolio/portfolio-11.png" alt="monstr"></div>
+            <div class="portfolio_images_item12"><img class="image" src="/image/portfolio/portfolio-12.png" alt="book"></div>
           </div>
         </div>
       </div>
@@ -135,26 +141,19 @@
 
   <div class="wrapper_footer">
     <div class="wrapper">
-      <footer class="footer">
-      <div class="footer_content">
-        <div><p class="footer_text" >&copy Copyright 2013 </p></div>
-        <div class="footer_social_buttons">
-          <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social button/ico-facebook.png" data="image/social button/ico-facebook.png"></a>
-          <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social button/ico-google-plus.png" data="image/social button/ico-google-plus.png"></a>
-          <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social button/ico-linkedin.png" data="image/social button/ico-linkedin.png"></a>
-          <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social button/ico-twitter.png" data="image/social button/ico-twitter.png"></a>
+      <footer class="footer__wrapper">
+        <div id="hid4" class="footer_content">
+          <div><p class="footer_text" >&copy; Copyright 2013 </p></div>
+          <div id="hid5" class="footer_social_buttons" >
+            <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social_button/ico-facebook.png" alt='ico-facebook'></a>
+            <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social_button/ico-google-plus.png" alt='ico-google-plus'></a>
+            <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social_button/ico-linkedin.png" alt='ico-linkedin'></a>
+            <a class="social_buttons" href="https://vk.com/id33673435" target="blank"><img src="image/social_button/ico-twitter.png" alt='ico-twitter'></a>
+          </div>
         </div>
-      </div>
       </footer> 
     </div>
   </div>
+  <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-<!-- <div class="phone1-vertical"><img src="image/phone-vertical.png" data="/image/phone-vertical"></div>
-            <div class="phone1-horizontal"><img src="image/phone-horizontal.png" data="/image/phone-horizontal"></div> -->

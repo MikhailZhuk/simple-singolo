@@ -1,9 +1,15 @@
 html{
   font-size: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 *{
-  transition: all .3s;
+  transition: all .5s;
+}
+
+a{
+  text-decoration: none;
+  color: #FFFFFF;
 }
 
 body{
@@ -12,18 +18,24 @@ body{
   justify-content: center;
   margin: 0px;
 }
+
 .wrapper{
   max-width: 1020px;
   margin: auto;
   }
 
 /*Header*/
+
 .wrapper_header{
   background: #2D303A;
   border-bottom: 0.6rem solid #323746; 
 }
 
-.header {
+.burger{
+  display: none;
+}
+
+.header__wrapper{
   display: flex;
   justify-content: space-between; 
   align-items: center;
@@ -55,7 +67,11 @@ body{
   cursor: pointer;
 }
 
-.navigation_pages>*:hover{
+a:hover{
+  color:#F06C64;
+}
+
+.focus{
   color:#F06C64;
 }
 
@@ -69,16 +85,41 @@ body{
   background: #F06C64;
   border-bottom: .6rem solid #EA676B;
 }
-.slide{
+.slide__wrapper{
   position: relative;
   width: 100%;
+}
+.slide__wrapper__phone1{
+   overflow: hidden;
+}  
+.reverse{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.image_phone{
-  position: relative;
+.slider__wrapper {
+  display: flex;
+  flex-direction: row;
+  transform: translateX(0%);
+}
+
+.slider__image{
   width: 100%;
   height: 100%;
+  display: inline-flex;
 }
+
+.run_slide_left{
+  transform: translateX(-100%);
+  transition: all 4s; 
+  display: inline;
+}
+
+.run_slide_right{
+  transform: translateX(100%);
+  transition: all 4s; 
+  display: inline;
+} 
 
 .arrow{
   position: absolute;
@@ -125,7 +166,7 @@ body{
   background: #F2F2F2;
   border-bottom: .6rem solid #FFFFFF;
 }
-.service{
+.service__wrapper{
   padding-right: 4rem;
   padding-left: 4rem;
 }
@@ -140,7 +181,8 @@ body{
 }
 .service_card{
   display: grid;
-  grid-template-columns: repeat( auto-fill, 300px);
+  grid-template-columns: repeat( auto-fit, 30rem);
+  justify-content: space-around;
   grid-gap: 2rem;
   padding-top: 2.85rem;
   padding-bottom: 4.45rem;
@@ -190,14 +232,13 @@ body{
 }
 
 
-
 /* Portfolio */
 
 .wrapper_portfolio{
   background: #2D303A;
   border-bottom: .6rem solid #323746;
 }
-.portfolio{
+.portfolio__wrapper{
   margin-right: 4rem;
   margin-left: 4rem;
 }
@@ -221,7 +262,7 @@ body{
   display: flex;
   flex-direction: row;
   border: 1px solid #767E9E;
-  color: #767E9E ;
+  color: #767E9E;
   font: normal 1.2rem Lato;
   font-weight: normal;
   line-height: 2rem;
@@ -229,22 +270,39 @@ body{
   margin-right: 1.05rem;
   padding-left: .6rem;
   padding-right: .6rem;
+  cursor: pointer;
+}
+
+.tag_selected {
+  color: #DEDEDE;
+  border-color:  #DEDEDE ;
+} 
+
+.tag_tag{
+  color: #DEDEDE;
+  border-color:  #DEDEDE ;
+}
+
+.portfolio_images>*:nth-child(n+13) { 
+  display: none; 
 }
 
 .portfolio_images{
   display: grid;
-  grid-template-columns: repeat(auto-fill, 22rem);
+  grid-template-columns: repeat(auto-fit, 23.37%);
   grid-template-rows: 1fr 1fr 1fr; 
-  column-gap: 2rem;
-  row-gap: 2rem;
+  align-items: center;
+  grid-gap: 2rem;
   margin-top: 1.8rem;
   padding-bottom: 6.8rem;
-  overflow:hidden;
-  height: 60.1rem;
 }
 
 .image{
   width: 100%;
+} 
+
+.shuffle{
+  order: +1;
 }
 
 /*Footer*/
@@ -276,33 +334,89 @@ body{
   padding-left: 0.8rem;
 }
 
-@media screen and (max-width: 1021px){
+@media screen and (max-width: 1019px){
   .wrapper{
     padding-left: 0;
     padding-right: 0;
   }
-  .portfolio{
+  .portfolio__wrapper{
     margin-right: 4rem;
     margin-left: 4rem;
   }
   .portfolio_images{
-    grid-template-columns: repeat( auto-fill, 21.6rem);
+    grid-template-columns: repeat( auto-fit, 31.4%);
     grid-template-rows: 1fr 1fr 1fr 1fr; 
     grid-gap: 1.9rem;
     margin-top: 2.8rem;
     padding-bottom: 7.3rem;
-    overflow:hidden;
-    height: 79.4rem;
   }
-
+}
 @media screen and (max-width: 767px){
-   .header_item2{
+  .navigation{
     display: none;
+  } 
+
+  .body{
+    position: relative;
   }
 
-  .header {
+  .header__wrapper{
+    position: relative;
     justify-content: center; 
-  }  
+  }
+
+  .logo{
+    font:normal 2rem Lato;
+    color: #FFFFFF;
+    letter-spacing: -0.03em;
+    padding-top: 1rem;
+    padding-bottom: 0.2rem;
+    cursor: pointer;
+  }
+  
+  .sideways{
+    display: inline;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1;
+    width: 70%;
+    background: #2D303A;
+    padding-left: 0;
+    height: 100%;
+    box-shadow: 456px 0px 74px 295px rgba(0, 0, 0, 0.5);
+    transition: all 1s;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navigation_pages{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    list-style: none;
+    font: normal bold 2.4rem Lato;
+    line-height: 29px;
+    letter-spacing: -0.035em;
+  }
+  
+  .burger{
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    top:2.6rem;
+    left: 2rem;
+    cursor: pointer;
+  }
+
+  .active{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
 
   .portfolio_buttons>*{
     padding-left: .4rem;
@@ -310,11 +424,16 @@ body{
   }
  
   .portfolio_images{
-    grid-template-columns: repeat( auto-fill, 15.1rem);
-    grid-gap: 1.4rem;
-    height: 55.4rem;
-    overflow:hidden;
+    grid-template-columns: repeat( auto-fit, 47%);
+    grid-template-rows: 1fr 1fr 1fr 1fr; 
+    column-gap: 1.3rem;
+    row-gap: 1.4rem;
   }
+
+  .portfolio_images>*:nth-child(n+9) { 
+    display: none; 
+  }
+
   .footer_text{
     display: none;
   }
@@ -332,13 +451,25 @@ body{
     padding-left: 2rem;
     padding-right: 2rem;
   }
-  .service_card{
-    grid-gap: 0.5rem;
-  }
-  /* .card_content_text{
 
-  } */
-  .portfolio{
+  .burger{
+    position: absolute;
+    left: 0rem;
+  }
+
+  .service_card{
+    grid-template-columns: 1fr ; 
+  }
+  
+  .service_card_icon{
+    padding-right: 1rem;
+  }
+  .service__wrapper{
+    padding-left: 1rem;
+    padding-right: 0rem;
+  }
+
+  .portfolio__wrapper{
     margin-right: 0;
     margin-left: 1rem;
   }
@@ -348,23 +479,13 @@ body{
     padding-right: .1rem;
   }
   .portfolio_images{
-    grid-template-columns: repeat(auto-fill, 15rem);
+    grid-template-columns: repeat(auto-fit, 45%);
     grid-template-rows: 1fr 1fr 1fr 1fr; 
-    column-gap: 1.3rem;
-    row-gap: 1.4rem;
+    grid-gap: 1.4rem;
     margin-top: 2.5rem;
     padding-bottom: 4.2rem;
-    
-    height: 5rem;overflow:hidden;
   }
-  .portfolio_images>*{
-    height: 55rem;
-    overflow:hidden;
-  }
-  .wrapper{
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
+
   .arrow_left{
     margin-left: 1%;
   }
