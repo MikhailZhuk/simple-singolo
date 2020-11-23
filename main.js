@@ -85,31 +85,77 @@ window.addEventListener('scroll', () => {
 
 //SLIDER
 
-const arroyRightButton = document.querySelector('.img_ar_right');
-const arroyLeftButton = document.querySelector('.img_ar_left');
-const photoPhoneFirst = document.querySelector('.image_phone1');
-const wrapper = document.querySelector('.slider__wrapper');
-const orderPhone = document.querySelector('.slide__wrapper__phone1')
+// const arroyRightButton = document.querySelector('.img_ar_right');
+// const arroyLeftButton = document.querySelector('.img_ar_left');
+// const photoPhoneFirst = document.querySelector('.image_phone1');
+// const wrapper = document.querySelector('.slider__wrapper');
+// const orderPhone = document.querySelector('.slide__wrapper__phone1')
 
-const slides = Array.from(orderPhone.querySelectorAll('.slider__image')) || [];
-const SLIDER_STEP = -100;
+// const slides = Array.from(orderPhone.querySelectorAll('.slider__image')) || [];
+// const SLIDER_STEP = -100;
+
+// const onSliderButtonClick = (direction) => {
+//   const activeIndex = slides.findIndex(slide => slide.classList.contains('slider__image-active'));
+//   const nextIndex = direction ? activeIndex + 1 : activeIndex - 1;
+//   const next = slides[nextIndex];
+
+//   if (next) {
+//     slides.forEach(slide => slide.classList.remove('slider__image-active'));
+//     next.classList.add('slider__image-active');
+//       wrapper.style.transform = 'translateX(' + nextIndex * SLIDER_STEP + '%)';
+//     }
+//   // }else(false){
+//   //   slides.forEach(slide => slide.classList.remove('slider__image-active'));
+//   //   next.classList.add('slider__image-active');
+//   //   wrapper.style.transform = 'translateX(' + nextIndex * SLIDER_STEP + '%)';
+//   // }
+// };
+const slider = document.querySelector('.slider__wrapper');
+const slides = Array.from(slider.querySelectorAll('.slider__image')) || [];
+const ANIMATION_STEP = -100;
+
+const activate = (slideIndex) => {
+  slides.forEach(slide => slide.classList.remove('slider__image-active'));
+  slides[slideIndex] && slides[slideIndex].classList.add('slider__image-active');
+}
+
+const showNext = (nextSlideIndex) => {
+  activate(nextSlideIndex);
+  slider.style.transform = 'translateX(' + ((nextSlideIndex * ANIMATION_STEP) + ANIMATION_STEP) + '%)';
+}
+
+const onLastReached = () => {
+  slider.classList.add('slider__wrapper-disabled'); // disables css animation
+  showNext(0);
+}
+
+const onFirstReached = () => {
+  slider.classList.add('slider__wrapper-disabled'); // disables css animation
+  showNext(slides.length - 1);
+}
 
 const onSliderButtonClick = (direction) => {
   const activeIndex = slides.findIndex(slide => slide.classList.contains('slider__image-active'));
   const nextIndex = direction ? activeIndex + 1 : activeIndex - 1;
-  const next = slides[nextIndex];
 
-  if (next) {
-    slides.forEach(slide => slide.classList.remove('slider__image-active'));
-    next.classList.add('slider__image-active');
-      wrapper.style.transform = 'translateX(' + nextIndex * SLIDER_STEP + '%)';
-    }
-  // }else(false){
-  //   slides.forEach(slide => slide.classList.remove('slider__image-active'));
-  //   next.classList.add('slider__image-active');
-  //   wrapper.style.transform = 'translateX(' + nextIndex * SLIDER_STEP + '%)';
-  // }
+  slider.classList.remove('slider__wrapper-disabled');
+
+  showNext(nextIndex);
+
+  if (nextIndex >= slides.length) {
+    return slider.addEventListener('transitionend', onLastReached, { once: true });
+  }
+
+  if (nextIndex < 0) {
+    return slider.addEventListener('transitionend', onFirstReached, { once: true });
+  }
 };
+
+const initialize = () => {
+  const arroyRightButton = document.querySelector('.img_ar_right');
+  const arroyLeftButton = document.querySelector('.img_ar_left');
+  const firstSlide = slider.querySelector('.slider__image:first-child');
+  const lastSlide = slider.querySelector('.slider__image:last-child');
 
 arroyRightButton.addEventListener('click', () => {
   onSliderButtonClick(true);
@@ -118,6 +164,15 @@ arroyRightButton.addEventListener('click', () => {
 arroyLeftButton.addEventListener('click', () => {
   onSliderButtonClick();
 })
+
+// copy the first/last elements to the end/begining automatically
+slider.insertBefore(firstSlide.cloneNode(), slider.lastChild.nextSibling);
+slider.insertBefore(lastSlide.cloneNode(), slider.firstChild);
+
+activate(0);
+}
+
+initialize();
 
 
 // PORTFOLIO BUTTONS

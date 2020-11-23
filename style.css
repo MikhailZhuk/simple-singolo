@@ -100,8 +100,18 @@ a:hover{
 .slider__wrapper {
   display: flex;
   flex-direction: row;
-  transform: translateX(0%);
+  transform: translateX(-100%);
+    transition: transform .5s;
 }
+
+.slider__wrapper-disabled {
+  transition: none;
+    /* transform: translateX(-100%); */
+}
+
+/* .slider__wrapper-enabled {
+  transition: transform .5s;
+} */
 
 .slider__image{
   width: 100%;
